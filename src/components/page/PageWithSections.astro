@@ -1,0 +1,76 @@
+---
+import AdvancedSection from '@src/components/section/AdvancedSection.astro';
+const { page } = Astro.props
+---
+
+<div class="page">
+
+{page.sections && page.sections.map((p) => (
+    <section 
+      class:list={[p.page_section_type, "page-section"]} 
+      style={`background-image: ${p.page_section_background_image ? `url(${p.page_section_background_image})`: 'none'}`}>
+      {
+        () => {
+          if (p.page_section_type == 'advanced-section') {
+            return (
+              <div class="left">
+                <AdvancedSection 
+                pageSection={p.left} />
+              </div>
+              <div class="right">
+                <AdvancedSection 
+                pageSection={p.right} />
+              </div>
+            )
+          } else {
+            return (
+              <div class="container page-section_container">
+              {p.page_section_title &&
+                <h2>{ p.page_section_title }</h2>
+              }
+              <p>{p.page_section_content}</p>
+            </div>
+            )
+          }
+        }
+      }
+    </section>
+))}
+
+</div>
+<style lang="scss">
+.page-section {
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  &_container {
+    position: relative;
+    max-width: 60rem !important;
+    margin: 0 auto;
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+    p {
+      line-height: 1.3;
+    }
+  }
+  &.advanced-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    .left, .right {
+      width: 50%;
+      min-height: 18rem;
+    }
+      @media (max-width: 65rem) {
+      .left, .right {
+        width: 100%;
+      }
+      .left.advanced_container {
+        order: 1;
+      }
+    }
+  }
+}
+</style>

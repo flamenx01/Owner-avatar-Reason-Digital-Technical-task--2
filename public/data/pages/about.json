@@ -1,0 +1,30 @@
+{"sections": [
+  {
+    "page_section_id": "title",
+    "page_section_title": "About",
+    "page_section_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "page_section_type": "title-section",
+    "page_section_background_image": "https://picsum.photos/id/116/1200/600"
+  },
+  {
+    "page_section_id": "section 1",
+    "page_section_title": "AdvancedTest",
+    "page_section_type": "advanced-section",
+    "left": {
+      "page_section_layout": "image",
+      "page_section_image": "https://picsum.photos/id/1079/1500/900",
+      "page_section_alt": "image"
+    },
+    "right": {
+      "page_section_layout": "content",
+      "page_section_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "page_section_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+  },
+  {
+    "page_section_id": "content",
+    "page_section_title": "Lorem ipsum",
+    "page_section_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "page_section_type": ""
+  }
+]}

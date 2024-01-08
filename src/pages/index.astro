@@ -1,0 +1,75 @@
+---
+import Layout from '@src/layouts/Layout.astro';
+import PageWithSections from '@src/components/page/PageWithSections.astro';
+
+const page = {"sections": [
+  {
+    "page_section_id": "title",
+    "page_section_title": "Get Online Week 2021",
+    "page_section_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "page_section_type": "title-section",
+    "page_section_background_image": "https://picsum.photos/id/115/1200/600"
+  },
+  {
+    "page_section_id": "section 1",
+    "page_section_title": "AdvancedTest",
+    "page_section_type": "advanced-section",
+    "left": {
+      "page_section_layout": "content",
+      "page_section_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "page_section_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "page_section_button": true,
+      "page_section_button_text": "Learn more about us",
+      "page_section_button_link": "/about"
+    },
+    "right": {
+      "page_section_layout": "image",
+      "page_section_image": "https://picsum.photos/id/1080/1500/900",
+      "page_section_alt": "image"
+    }
+  },
+  {
+    "page_section_id": "help",
+    "page_section_title": "How can we help you?",
+    "page_section_text": "Let us know who you are and what you're looking for, and we'll help get you to the right place.",
+    "page_section_type": "form-section"
+  },
+  {
+    "page_section_id": "about-us",
+    "page_section_title": "What we do?",
+    "page_section_text": "You might not have heard of us. Here are the following inpactful programmes:",
+    "page_section_type": "card-section",
+    "cards" : [
+      {
+        "title": "About",
+        "text": "Lorem ipsum dolor sit amet",
+        "link": "/about"
+      },
+      {
+        "title": "Insights",
+        "text": "Lorem ipsum dolor sit amet",
+        "link": "/insights"
+      },
+      {
+        "title": "Get Involved",
+        "text": "Lorem ipsum dolor sit amet",
+        "link": "/get-involved"
+      },
+      {
+        "title": "Network",
+        "text": "Lorem ipsum dolor sit amet",
+        "link": "/network"
+      }
+    ]
+  }
+]};
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<PageWithSections page={page}/>
+	</main>
+</Layout>
+<style>
+
+</style>

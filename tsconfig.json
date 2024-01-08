@@ -1,0 +1,15 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "baseUrl": "/mnt/d/Web Dev/Reason Digital - Technical task - Part 2",
+    "paths": {
+      "@src/*": [
+        "src/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ]
+    },
+    "jsx": "preserve"
+  }
+}
