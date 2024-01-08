@@ -9,7 +9,8 @@ const { page } = Astro.props
 <div class="page">
 
 {page.sections && page.sections.map((p) => (
-    <section 
+    <section
+      id={p.page_section_id}
       class:list={[p.page_section_type, "page-section"]} 
       style={`background-image: ${p.page_section_background_image ? `url(${p.page_section_background_image})`: 'none'}`}>
       {
