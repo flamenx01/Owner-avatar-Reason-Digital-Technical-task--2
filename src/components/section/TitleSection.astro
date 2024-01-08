@@ -1,0 +1,33 @@
+---
+const { pageSection } = Astro.props;
+---
+<div class="title-section container">
+  <div class="title-section__content">
+    <h1 class="title-section__title">
+      { pageSection.page_section_title }
+    </h1>
+    <p class="title-section__text large-text">
+      { pageSection.page_section_text }
+    </p>
+  </div>
+</div>
+<style lang="scss" scoped>
+  .title-section {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5.0625rem;
+    padding-top: 5.0625rem;
+    &__title {
+      background-color: $main-color;
+      color: $light-text;
+      padding: 1.5rem;
+      display: inline-block;
+    }
+    &__text {
+      background-color: $light-text;
+      color: $alt-color;
+      padding: 1.5rem;
+      max-width: 40rem;
+    }
+  }
+  </style>

@@ -1,5 +1,8 @@
 ---
 import AdvancedSection from '@src/components/section/AdvancedSection.astro';
+import TitleSection from '@src/components/section/TitleSection.astro';
+import FormSection from '@src/components/section/FormSection.astro';
+import CardSection from '@src/components/section/CardSection.astro';
 const { page } = Astro.props
 ---
 
@@ -21,6 +24,18 @@ const { page } = Astro.props
                 <AdvancedSection 
                 pageSection={p.right} />
               </div>
+            )
+          } else if (p.page_section_type == 'title-section') {
+            return (
+              <TitleSection pageSection={p} />
+            )
+          } else if (p.page_section_type == 'form-section') {
+            return (
+              <FormSection pageSection={p} />
+            )
+          } else if (p.page_section_type == 'card-section') {
+            return (
+              <CardSection pageSection={p} />
             )
           } else {
             return (
