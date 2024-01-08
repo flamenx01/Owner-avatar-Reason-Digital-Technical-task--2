@@ -1,0 +1,59 @@
+---
+import Layout from '@src/layouts/Layout.astro';
+import PageWithSections from '@src/components/page/PageWithSections.astro';
+import Home from '@public/data/pages/home.json';
+import About from '@public/data/pages/about.json';
+import DigitalDivide from '@public/data/pages/digital-divide.json';
+import GetInvolved from '@public/data/pages/get-involved.json';
+import Insights from '@public/data/pages/insights.json';
+import Network from '@public/data/pages/network.json';
+
+
+export async function getStaticPaths() {
+  const pages = [
+    {
+      slug: undefined,
+      title: "Good Things",
+      page: Home,
+    },
+    {
+      slug: "about",
+      title: "Good Things | about",
+      page: About,
+    },
+    {
+      slug: "digital-divide",
+      title: "Good Things | Digitial Divide",
+      page: DigitalDivide,
+    },
+    {
+      slug: "get-involved",
+      title: "Good Things | Get Involved",
+      page: GetInvolved,
+    },
+    {
+      slug: "insights",
+      title: "Good Things | Insights",
+      page: Insights,
+    },
+    {
+      slug: "network",
+      title: "Good Things | Network",
+      page: Network,
+    },
+  ];
+  return pages.map(({ slug, title, page }) => {
+    return {
+      params: { slug },
+      props: { title, page },
+    };
+  });
+}
+
+const { title, page } = Astro.props;
+---
+<Layout title={title}>
+	<main>
+		<PageWithSections page={page}/>
+	</main>
+</Layout>

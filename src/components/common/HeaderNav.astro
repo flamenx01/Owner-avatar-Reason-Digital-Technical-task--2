@@ -1,12 +1,5 @@
 ---
-const menuItems = {"items": [
-  {"title": "Home", "url": "/"},
-  {"title": "What we do", "url": "/about"},
-  {"title": "The digital divide", "url": "/digital-divide"},
-  {"title": "Get involved", "url": "/get-involved"},
-  {"title": "Our network", "url": "/network"},
-  {"title": "insights", "url": "/insights"}
-]}
+import menuItems from '@public/data/menu.json';
 const showMenu = false;
 ---
 
@@ -26,20 +19,26 @@ const showMenu = false;
         ))}
       </ul>
     </nav>
-    <button @click="showMenu = !showMenu" class="nav-button btn btn--alt-2">Menu</button>
+    <button id="menuButton" class="nav-button btn btn--alt-2">Menu</button>
   </div>
-  {showMenu &&
-    <nav class="mobile-nav nav-menu container">
-      <ul>
-        {menuItems.items.map((item) => (
-          <li>
-            <a href={item.url}>{item.title}</a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-}
+  <nav id="menuContainer" class="mobile-nav nav-menu container hidden">
+    <ul>
+      {menuItems.items.map((item) => (
+        <li>
+          <a href={item.url}>{item.title}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
 </div>
+<script is:inline>
+  const menuButton = document.getElementById('menuButton');
+  menuButton?.addEventListener("click", () => {
+    const menuContainer = document.getElementById('menuContainer');
+    menuContainer.classList.toggle("hidden")
+  })
+</script>
 <style lang="scss" scoped>
   .header_main {
     display: flex;
@@ -119,6 +118,9 @@ const showMenu = false;
     }
     @media (max-width: 70rem) {
       display: flex;
+      &.hidden {
+        display: none;
+      }
     }
   }
   </style>

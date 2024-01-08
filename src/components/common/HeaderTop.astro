@@ -4,8 +4,8 @@ import searchIcon from '@src/assets/icons/search.svg?raw';
 <div class="header__top container">
   <div class="header__top__search">
     <a class="button" aria-label="Homepage" href="/">
-      <Fragment set:html={searchIcon}/> 
-      <span>Search</span>
+      <span class="icon"><Fragment set:html={searchIcon} /></span>
+      <span class="button-text">Search</span>
     </a>
   </div>
   <div class="header__top__actions">
@@ -28,12 +28,11 @@ import searchIcon from '@src/assets/icons/search.svg?raw';
         align-items: center;
         color: $dark-text;
         font-weight: 700;
-        svg {
-          margin-right: 0.6rem;
+        .icon {
           width: 1.5rem;
           height: 1.5rem;
         }
-        span {
+        .button-text {
           margin-left: 0.6rem;
         }
         &:hover {
@@ -41,7 +40,7 @@ import searchIcon from '@src/assets/icons/search.svg?raw';
           color: $dark-text;
         }
         @media (max-width: 45rem) {
-          span {
+          .button-text {
             display: none;
           }
           .icon {
