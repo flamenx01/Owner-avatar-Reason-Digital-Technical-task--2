@@ -1,7 +1,9 @@
 # About
 Marketing site built in Astro. Data is stored in json as there is no backend.
 
-## 🧞 Commands
+Deployed to https://reason-digital-technical-task-2.pages.dev/
+
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
