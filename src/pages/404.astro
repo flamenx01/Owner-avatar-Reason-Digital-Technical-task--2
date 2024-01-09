@@ -1,0 +1,21 @@
+---
+import Layout from '@src/layouts/Layout.astro';
+import PageWithSections from '@src/components/page/PageWithSections.astro';
+
+const title = 'Page not found';
+
+const page = {"sections": [
+    {
+      "page_section_id": "title",
+      "page_section_title": "404 - Page not found",
+      "page_section_text": "This page was not found",
+      "page_section_type": "title-section",
+      "page_section_background_image": ""
+    }]};
+
+---
+<Layout title={title}>
+	<main>
+		<PageWithSections page={page}/>
+	</main>
+</Layout>
