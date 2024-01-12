@@ -1,14 +1,14 @@
 export async function onRequest(context) {
 
   class ElementHandler {
-    element(element) {
-      const fact = getFact();
+    async element(element) {
+      const fact = await getFact();
       element.append(`<div>${fact}</div>`, {html: true});
     }
   }
 
-  const res = await fetch(context);
-  return new HTMLRewriter().on('section#content', new ElementHandler()).transform(res);
+  const asset = await context.env.ASSETS.fetch(new URL(context.request.url));
+  return new HTMLRewriter().on('section#content', new ElementHandler()).transform(asset);
 
 
   async function getFact() {
@@ -21,7 +21,3 @@ export async function onRequest(context) {
     }
   }
 }
-
-// export function onRequest(context) {
-//   return new Response("Hello, world!")
-// }
