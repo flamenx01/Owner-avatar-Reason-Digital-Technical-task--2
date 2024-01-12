@@ -1,26 +1,23 @@
-export default {
+export async function onRequest(context) {
 
-  async fetch(request) {
-
-    class ElementHandler {
-      element(element) {
-        const fact = getFact();
-        element.append(`<div>${fact}</div>`, {html: true});
-      }
+  class ElementHandler {
+    element(element) {
+      const fact = getFact();
+      element.append(`<div>${fact}</div>`, {html: true});
     }
+  }
 
-    const res = await fetch(request);
-    return new HTMLRewriter().on('section#content', new ElementHandler()).transform(res);
+  const res = await fetch(context);
+  return new HTMLRewriter().on('section#content', new ElementHandler()).transform(res);
 
 
-    async function getFact() {
-      const response = await fetch(`https://catfact.ninja/fact`);
-      try {
-        const result = await response.json();
-        return result.fact;
-      } catch (err) {
-        return err;
-      }
+  async function getFact() {
+    const response = await fetch(`https://catfact.ninja/fact`);
+    try {
+      const result = await response.json();
+      return result.fact;
+    } catch (err) {
+      return err;
     }
   }
 }
